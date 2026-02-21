@@ -24,6 +24,16 @@ line-length = 100
 python_version = "3.11"
 strict = false
 
+[tool.pytest.ini_options]
+markers = [
+    "unit: Unit tests for individual functions",
+    "integration: Integration tests for component interactions",
+    "simulation: Simulation tests for end-to-end scenarios",
+]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+
 [build-system]
 requires = ["poetry-core>=1.8.0"]
 build-backend = "poetry.core.masonry.api"
